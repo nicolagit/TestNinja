@@ -15,5 +15,36 @@ namespace TestNinja.Test
 
             Assert.That(result.Equals(3));
         }
+
+        [Test]
+        public void Max_FirstArgumentIsGreater_ReturnTheFirstArgument()
+        {
+            var math = new Math();
+
+            var result = math.Max(2, 1);
+
+            Assert.That(result, Is.EqualTo(2));
+        }
+
+        [Test]
+        public void Max_SecondArgumentIsGreater_ReturnTheSecondArgument()
+        {
+            var math = new Math();
+
+            var result = math.Max(1, 2);
+
+            Assert.That(result, Is.EqualTo(2));
+            
+        }
+
+        [Test]
+        public void Max_ArgumentAreEquale_ReturnTheSameArgument()
+        {
+            var math = new Math();
+
+            var result = math.Max(2, 2);
+
+            Assert.That(result, Is.EqualTo(2));
+        }
     }
 }
