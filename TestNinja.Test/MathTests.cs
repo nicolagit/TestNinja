@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Security.Principal;
+using NUnit.Framework;
 using TestNinja.Fundamentals;
 
 namespace TestNinja.Test
@@ -15,12 +16,13 @@ namespace TestNinja.Test
         }
 
         [Test]
-        [Ignore("Because I wanted to!")]
+        //[Ignore("Because I wanted to!")]
         public void Add_WhenCalled_RetursTheSumOfArguments()
         {
             var result = _math.Add(1, 2);
 
-            Assert.That(result.Equals(3));
+            Assert.That(result, Is.EqualTo(3));
+            //Assert.That(_math, Is.Not.Null);
         }
 
         [Test]
